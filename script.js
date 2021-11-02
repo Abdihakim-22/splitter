@@ -2,8 +2,19 @@
 
 
 
-function split4(){
+function split4(e){
+
+    if(e.shift){
+        //shift is pressed- lets all the children of my parent (that includes me)
+        this.parentNode.addEventListener("click", split4)
+        this.parentNode.innerHTML='' //or delete the children a nicer way
+
+    }
+    else{
+        //split a div into 4 by adding 4 quarters 
+    }
     //splits a div into 4 by adding 4 quarters
+    // this.removeEventListener("click",split4)
     addQuarter(this)
     addQuarter(this)
     addQuarter(this)
